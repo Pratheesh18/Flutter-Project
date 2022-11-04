@@ -1,4 +1,4 @@
-package com.example.uee_proj
+package com.example.pratheesh
 
 import io.flutter.embedding.android.FlutterActivity
 

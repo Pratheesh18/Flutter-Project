@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.uee_proj">
+    package="com.example.pratheesh">
    <application
-        android:label="uee_proj"
+        android:label="pratheesh"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
