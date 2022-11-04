@@ -6,6 +6,7 @@ import 'package:pratheesh/mainviews/plant_view.dart';
 import 'package:pratheesh/mainviews/wether_view.dart';
 
 class HomePage extends StatefulWidget {
+
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
             child: GestureDetector(
               onTap: (){                      Navigator.push(
                 context,MaterialPageRoute(
-                  builder: (context) => const DocumentMainView()),
+                  builder: (context) =>  DocumentMainView()),
               );},
               child: Container(
                 width: 150,
