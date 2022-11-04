@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pratheesh/app_colors.dart';
+import 'package:pratheesh/btm_nav_bar.dart';
+import 'package:pratheesh/mainviews/Document_view.dart';
+import 'package:pratheesh/mainviews/plant_view.dart';
+import 'package:pratheesh/mainviews/wether_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,14 +16,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.primaryColor,
+        elevation: 9,
+        title: Text("Home",style: TextStyle(color: AppColors.whiteColor),),
+
+      ),
       backgroundColor: AppColors.primaryColor,
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 130.0,top: 100),
+            padding: const EdgeInsets.only(left: 90.0,top: 70),
             child: Align(
                 alignment: Alignment.topLeft,
-                child: Text('Create\nAccount', style: TextStyle(fontSize: 30,color: AppColors.whiteColor))),
+                child: Text('Welcome Home', style: TextStyle(fontSize: 30,color: AppColors.whiteColor))),
           ),
       Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,9 +37,12 @@ class _HomePageState extends State<HomePage> {
         children: [
 
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(20.0),
             child: GestureDetector(
-              onTap: (){},
+              onTap: (){                      Navigator.push(
+                context,MaterialPageRoute(
+                  builder: (context) => const DocumentMainView()),
+              );},
               child: Container(
                 width: 150,
                 height: 150,
@@ -47,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 child: Column(
                   children: [
-                    Image.asset("assets/images/rain.png", height: 59, fit: BoxFit.cover),
+                    Image.asset("assets/images/doc.png", height: 69, fit: BoxFit.cover),
                     const Spacer(),
                     Text("Document ",
                         textAlign: TextAlign.center,
@@ -77,9 +90,12 @@ class _HomePageState extends State<HomePage> {
 
             ),
           ),
-          SizedBox(width: 50,),
+          SizedBox(width: 20,),
           GestureDetector(
-            onTap: (){},
+            onTap: (){                      Navigator.push(
+              context,MaterialPageRoute(
+                builder: (context) => const PlantMainView()),
+            );},
             child: Container(
               width: 150,
               height: 150,
@@ -97,9 +113,9 @@ class _HomePageState extends State<HomePage> {
               ),
               child: Column(
                 children: [
-                  Image.asset("assets/images/rain.png", height: 59, fit: BoxFit.cover),
+                  Image.asset("assets/images/plant.png", height: 69, fit: BoxFit.cover),
                   const Spacer(),
-                  Text("Document ",
+                  Text("Plants ",
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         color: Colors.black,
@@ -130,11 +146,14 @@ class _HomePageState extends State<HomePage> {
 
         ],
       ),
-          Align(
-            alignment: Alignment.center,
+          Padding(
+            padding: const EdgeInsets.only(left: 120,top: 30),
             child: Row(
               children: [GestureDetector(
-                onTap: (){},
+                onTap: (){                      Navigator.push(
+      context,MaterialPageRoute(
+          builder: (context) => const WetherMainView()),
+    );},
                 child: Container(
                   width: 150,
                   height: 150,
@@ -152,9 +171,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: Column(
                     children: [
-                      Image.asset("assets/images/rain.png", height: 59, fit: BoxFit.cover),
+                      Image.asset("assets/images/w1.png", height: 69, fit: BoxFit.cover),
                       const Spacer(),
-                      Text("Document ",
+                      Text("Weather ",
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                             color: Colors.black,
@@ -185,6 +204,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }
